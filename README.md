@@ -1,16 +1,27 @@
-# crud_cloud_storage
+# CRUD Cloud Storage - Flutter
 
-A new Flutter project.
+Project ini adalah aplikasi **CRUD sederhana berbasis Flutter** yang menggunakan **Firebase Cloud Firestore** sebagai database cloud.  
+Aplikasi bertema **game**, digunakan untuk menyimpan dan mengelola data game.
 
-## Getting Started
+Project ini dibuat untuk **tugas kuliah**.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## ✨ Fitur Aplikasi
+- Menampilkan data game dari Firebase
+- Menambahkan data game
+- Mengedit data game
+- Menghapus data game
+- Tampilan bertema game
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Aplikasi ini Menggunakan
+- Flutter
+- Firebase Cloud Firestore
+- Firebase Core
+
+## 🖼️ Tampilan Aplikasi
+Berikut tampilan aplikasi:
+
+![Tampilan Aplikasi](assets/images/tampilan.png)
