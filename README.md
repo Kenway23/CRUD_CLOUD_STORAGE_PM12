@@ -3,7 +3,7 @@
 Project ini adalah aplikasi **CRUD sederhana berbasis Flutter** yang menggunakan **Firebase Cloud Firestore** sebagai database cloud.  
 Aplikasi bertema **game**, digunakan untuk menyimpan dan mengelola data game.
 
-Project ini dibuat untuk **tugas kuliah**.
+Project ini dibuat untuk **tugas kuliah Pemograman Mobile 2 Elearning**.
 
 ---
 
