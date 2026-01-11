@@ -24,4 +24,8 @@ Project ini dibuat untuk **tugas kuliah Pemograman Mobile 2 Elearning**.
 ## 🖼️ Tampilan Aplikasi
 Berikut tampilan aplikasi:
 
+## 🎬 Demo Aplikasi
+![Demo Aplikasi](assets/demo/demo.gif)
+
+
 ![Tampilan Aplikasi](assets/images/tampilan.png)
