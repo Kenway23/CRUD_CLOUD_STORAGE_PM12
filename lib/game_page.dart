@@ -32,6 +32,62 @@ class _GamePageState extends State<GamePage> {
     platformController.clear();
   }
 
+  void editGame(String id, String title, String genre, String platform) {
+    final editTitle = TextEditingController(text: title);
+    final editGenre = TextEditingController(text: genre);
+    final editPlatform = TextEditingController(text: platform);
+
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        backgroundColor: const Color(0xFF1A1A2E),
+        title: const Text('EDIT GAME', style: TextStyle(color: Colors.white)),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            gameField(
+              controller: editTitle,
+              label: 'Game Title',
+              icon: Icons.videogame_asset,
+            ),
+            const SizedBox(height: 8),
+            gameField(
+              controller: editGenre,
+              label: 'Genre',
+              icon: Icons.category,
+            ),
+            const SizedBox(height: 8),
+            gameField(
+              controller: editPlatform,
+              label: 'Platform',
+              icon: Icons.gamepad,
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text(
+              'CANCEL',
+              style: TextStyle(color: Colors.redAccent),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              gameCollection.doc(id).update({
+                'title': editTitle.text,
+                'genre': editGenre.text,
+                'platform': editPlatform.text,
+              });
+              Navigator.pop(context);
+            },
+            child: const Text('UPDATE'),
+          ),
+        ],
+      ),
+    );
+  }
+
   void deleteGame(String id) {
     gameCollection.doc(id).delete();
   }
@@ -148,12 +204,29 @@ class _GamePageState extends State<GamePage> {
                           '${doc['genre']} • ${doc['platform']}',
                           style: const TextStyle(color: Colors.white70),
                         ),
-                        trailing: IconButton(
-                          icon: const Icon(
-                            Icons.delete,
-                            color: Colors.redAccent,
-                          ),
-                          onPressed: () => deleteGame(doc.id),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              icon: const Icon(
+                                Icons.edit,
+                                color: Colors.yellowAccent,
+                              ),
+                              onPressed: () => editGame(
+                                doc.id,
+                                doc['title'],
+                                doc['genre'],
+                                doc['platform'],
+                              ),
+                            ),
+                            IconButton(
+                              icon: const Icon(
+                                Icons.delete,
+                                color: Colors.redAccent,
+                              ),
+                              onPressed: () => deleteGame(doc.id),
+                            ),
+                          ],
                         ),
                       ),
                     );
