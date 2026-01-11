@@ -22,7 +22,6 @@ Project ini dibuat untuk **tugas kuliah Pemograman Mobile 2 Elearning**.
 - Firebase Core
 
 ## 🖼️ Tampilan Aplikasi
-Berikut tampilan aplikasi:
 ![Tampilan Aplikasi](assets/images/tampilan.png)
 
 ## 🎬 Demo Aplikasi
